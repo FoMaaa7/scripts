@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "Take ip: "
+read ip
+echo "Take table name: "
+read bd
+echo $ip
+echo $bd
+PGPASSWORD='2391'  psql -U postgres  -d air -c "select * from $bd;"
+PGPASSWORD='2391'  psql -U postgres  -d air -c "select * from $bd;"> /home/antoshka/tx.txt
+gzip ./tx.txt
+sshpass -p '23912391' scp ~/tx.txt.gz ant@$ip:/home/ant
+sshpass -p '23912391' ssh ant@$ip "gunzip tx.txt.gz"
