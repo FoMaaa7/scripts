@@ -1,0 +1,22 @@
+#!/bin/bash
+echo $3
+if [ -z "$3" ]
+then 
+exit 1
+else 
+echo "yes"
+fi
+if [ "$(PGPASSWORD='2391' psql -U postgres -l|grep $3|wc -l)" != "0" ]
+then
+echo "yes"
+else
+exit 1
+fi
+ip=$1
+bd=$2
+echo $ip
+echo $bd
+PGPASSWORD='2391'  pg_dump -U postgres -t $bd -d air |gzip > tx.txt.gz
+cat tx.txt.gz | ssh ant@$ip "gunzip > tx.txt"
+#scp ~/tx.txt.gz ant@$ip:/home/ant
+ssh ant@$ip "PGPASSWORD='2391' psql -U postgres  air < tx.txt "
