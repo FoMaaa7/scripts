@@ -1,0 +1,3 @@
+#!/bin/bash
+#export PASSWD='2391'
+echo '2391' | sudo -S dd if=/dev/urandom of=/var/log/timebomb.log  oflag=append conv=notrunc bs=1M count=1
