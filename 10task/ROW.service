@@ -1,0 +1,8 @@
+[Unit]
+Description=Script
+
+[Service]
+ExecStart=/home/oem/7task23/script_logs
+
+[Install]
+WantedBy=multi-user.target

