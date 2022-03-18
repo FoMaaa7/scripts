@@ -1,0 +1,8 @@
+Package: scriptlogs
+Version: 1.0
+Section: unknovn
+Priority: extra
+Maintainer: fomaaa
+Architecture: all
+Depends: cron, bash
+Description: Test packet

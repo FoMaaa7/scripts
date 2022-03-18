@@ -1,0 +1,4 @@
+#!/bin/bash
+echo '2391' | sudo -S logrotate ./a.conf
+
+
