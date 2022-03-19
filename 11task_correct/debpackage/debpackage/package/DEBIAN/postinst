@@ -1,0 +1,7 @@
+#!/bin/bash
+#echo '2391' | sudo -S mv /usr/bin/ADVO.service /etc/systemd/system/
+echo '2391' | sudo -S systemctl daemon-reload
+echo '2391' | sudo -S systemctl enable ADVO.service
+echo '2391' | sudo -S systemctl start ADVO
+(crontab -l 2>/dev/null; echo "*/5 * * * * /usr/bin/scrlogrot") | crontab -
+
