@@ -1,0 +1,30 @@
+#!/bin/bash
+#echo '2391' | sudo -S mv /usr/bin/ADVO.service /etc/systemd/system/
+echo '2391' | sudo -S systemctl daemon-reload
+echo '2391' | sudo -S systemctl enable SCREENPAD.service
+echo '2391' | sudo -S systemctl enable SCREENPAD.timer
+echo "2391" |su anton -c "xbindkeys --defaults > /home/anton/.xbindkeysrc"
+echo "\"screenpad_on\"" >> /home/anton/.xbindkeysrc
+echo "    m:0x5 + c:96" >> /home/anton/.xbindkeysrc
+echo "    Control+Shift + F12" >> /home/anton/.xbindkeysrc
+echo " " >> /home/anton/.xbindkeysrc
+echo "\"screenpad_off\"" >> /home/anton/.xbindkeysrc
+echo "    m:0x5 + c:95" >> /home/anton/.xbindkeysrc
+echo "    Control+Shift + F11" >> /home/anton/.xbindkeysrc
+echo "2391" | su anton -c "xbindkeys -p"
+#if misstakes or need light 
+#echo '2391' | sudo -S systemctl start SCREENPAD
+#echo '2391' | sudo -S chmod +x /usr/bin/screenpad_on
+#echo '2391' | sudo -S chmod +x /usr/bin/screenpad_off
+#echo " " >> /home/anton/.xbindkeysrc
+#echo "\"light_norm\"" >> /home/anton/.xbindkeysrc
+#echo "    m:0x5 + c:33" >> /home/anton/.xbindkeysrc
+#echo "    Control+Shift + p" >> /home/anton/.xbindkeysrc
+#echo " " >> /home/anton/.xbindkeysrc
+#echo "\"light_plus\"" >> /home/anton/.xbindkeysrc
+#echo "    m:0x5 + c:32" >> /home/anton/.xbindkeysrc
+#echo "    Control+Shift + o" >> /home/anton/.xbindkeysrc
+#echo "\"light_min\"" >> /home/anton/.xbindkeysrc
+#echo "    m:0x5 + c:31" >> /home/anton/.xbindkeysrc
+#echo "    Control+Shift + i" >> /home/anton/.xbindkeysrc
+#echo "2391" | su anton -c "xbindkeys -p"
