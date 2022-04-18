@@ -1,0 +1,7 @@
+#!/bin/bash
+#export XAUTHORITY=~/Xauthority
+xhost +
+export DISPLAY=:0
+#xhost +
+xrandr --output DP-1 --off
+
