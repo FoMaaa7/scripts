@@ -1,0 +1,8 @@
+[Unit]
+Description=time
+
+[Timer]
+OnBootSec=40
+
+[Install]
+WantedBy=default.target

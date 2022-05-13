@@ -1,0 +1,12 @@
+[Unit]
+Description=Script
+After=default.target
+
+[Service]
+User=anton
+Environment=DISPLAY=:0
+Type=one-shot
+ExecStart=/usr/bin/screenpad_off
+
+[Install]
+WantedBy=multi-user.target
